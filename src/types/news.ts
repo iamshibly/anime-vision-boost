@@ -4,6 +4,8 @@ export interface NewsArticle {
   excerpt: string;
   content?: string;
   imageUrl?: string;
+  imageUrls?: string[]; // Multiple candidate images
+  imageHash?: string; // Hash for rotation stability
   author: string;
   source: string;
   sourceUrl?: string;

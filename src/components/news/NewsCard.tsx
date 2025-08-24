@@ -11,7 +11,7 @@ interface NewsCardProps {
 }
 
 export const NewsCard = ({ article, variant = 'default', className = '' }: NewsCardProps) => {
-  const imageUrl = getValidImageUrl(article.imageUrl, article.id);
+  const imageUrl = getValidImageUrl(article.imageUrl, article.id, article.imageUrls);
   const isCompact = variant === 'compact';
   const isFeatured = variant === 'featured';
 
@@ -52,6 +52,15 @@ export const NewsCard = ({ article, variant = 'default', className = '' }: NewsC
           </div>
         )}
 
+        {/* Additional image indicators for multi-image articles */}
+        {article.imageUrls && article.imageUrls.length > 1 && (
+          <div className="absolute bottom-3 right-3">
+            <Badge variant="secondary" className="bg-black/50 text-white backdrop-blur-sm text-xs">
+              +{article.imageUrls.length - 1} more
+            </Badge>
+          </div>
+        )}
+        
         {/* Headline indicator */}
         {article.isHeadline && (
           <div className="absolute bottom-3 left-3">
