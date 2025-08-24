@@ -1,6 +1,7 @@
 import { NewsArticle } from '@/types/news';
+import { dedupeImages } from '@/utils/imageUtils';
 
-export const mockNewsData: NewsArticle[] = [
+const rawMockNewsData: NewsArticle[] = [
   {
     id: '1',
     title: 'Attack on Titan Final Season Receives Critical Acclaim',
@@ -93,5 +94,64 @@ export const mockNewsData: NewsArticle[] = [
     publishedAt: new Date('2024-01-08'),
     category: 'manga',
     tags: ['my hero academia', 'final arc', 'deku']
+  },
+  // Add duplicate image entries to test deduplication
+  {
+    id: '9',
+    title: 'Attack on Titan Behind the Scenes Documentary',
+    excerpt: 'A new documentary reveals the creative process behind the final season of Attack on Titan.',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1885/119899l.jpg', // Duplicate of #1
+    author: 'John Smith',
+    source: 'NHK',
+    publishedAt: new Date('2024-01-07'),
+    category: 'industry',
+    tags: ['attack on titan', 'documentary', 'behind the scenes']
+  },
+  {
+    id: '10',
+    title: 'Attack on Titan Merchandise Surge',
+    excerpt: 'Following the series finale, Attack on Titan merchandise sales have reached unprecedented levels.',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1885/119899l.jpg', // Duplicate of #1
+    author: 'Emma Davis',
+    source: 'Retail Weekly',
+    publishedAt: new Date('2024-01-06'),
+    category: 'industry',
+    tags: ['attack on titan', 'merchandise', 'sales']
+  },
+  {
+    id: '11',
+    title: 'Attack on Titan Fan Art Exhibition',
+    excerpt: 'A major fan art exhibition celebrating Attack on Titan opens in Tokyo.',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1885/119899l.jpg', // Duplicate of #1 - this should get fallback
+    author: 'Yuki Tanaka',
+    source: 'Art News Japan',
+    publishedAt: new Date('2024-01-05'),
+    category: 'other',
+    tags: ['attack on titan', 'fan art', 'exhibition']
+  },
+  {
+    id: '12',
+    title: 'Generic News Article with Logo',
+    excerpt: 'This article intentionally uses a generic logo URL to test the filtering system.',
+    imageUrl: 'https://example.com/site-logo.png', // Should be filtered as generic
+    author: 'Test Author',
+    source: 'Test Source',
+    publishedAt: new Date('2024-01-04'),
+    category: 'other',
+    tags: ['test', 'generic']
+  },
+  {
+    id: '13',
+    title: 'Article with Missing Image',
+    excerpt: 'This article has no image URL to test the fallback system.',
+    // No imageUrl - should get fallback
+    author: 'No Image Author',
+    source: 'Image Test',
+    publishedAt: new Date('2024-01-03'),
+    category: 'other',
+    tags: ['test', 'fallback']
   }
 ];
+
+// Apply deduplication before exporting
+export const mockNewsData: NewsArticle[] = dedupeImages(rawMockNewsData);

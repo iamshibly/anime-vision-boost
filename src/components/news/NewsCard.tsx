@@ -11,7 +11,7 @@ interface NewsCardProps {
 }
 
 export const NewsCard = ({ article, variant = 'default', className = '' }: NewsCardProps) => {
-  const imageUrl = getValidImageUrl(article.imageUrl);
+  const imageUrl = getValidImageUrl(article.imageUrl, article.id);
   const isCompact = variant === 'compact';
   const isFeatured = variant === 'featured';
 
@@ -30,7 +30,7 @@ export const NewsCard = ({ article, variant = 'default', className = '' }: NewsC
         <img
           src={imageUrl}
           alt={article.title}
-          onError={handleImageError}
+          onError={(e) => handleImageError(e, article.id)}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
