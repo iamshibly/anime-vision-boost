@@ -119,7 +119,7 @@ const NewsDetail = () => {
                   className="flex items-center text-primary hover:text-primary-glow transition-colors"
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  <span>{article.source}</span>
+                  <span>Read Original Article</span>
                 </a>
               )}
               <Button variant="ghost" size="sm">

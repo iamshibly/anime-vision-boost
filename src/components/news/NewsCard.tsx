@@ -100,7 +100,14 @@ export const NewsCard = ({ article, variant = 'default', className = '' }: NewsC
           {article.sourceUrl && (
             <div className="flex items-center text-primary hover:text-primary-glow transition-colors">
               <ExternalLink className="w-3 h-3 mr-1" />
-              <span className="truncate max-w-24">{article.source}</span>
+              <a 
+                href={article.sourceUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="truncate max-w-24 hover:underline"
+              >
+                {article.source}
+              </a>
             </div>
           )}
         </div>

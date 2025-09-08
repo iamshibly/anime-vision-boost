@@ -15,7 +15,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Sarah Chen',
     source: 'Anime News Network',
-    sourceUrl: 'https://animenewsnetwork.com',
+    sourceUrl: 'https://www.animenewsnetwork.com/news/2024-04-03/attack-on-titan-final-season-receives-critical-acclaim/.207721',
     publishedAt: new Date('2024-01-15'),
     category: 'anime',
     tags: ['attack on titan', 'final season', 'mappa'],
@@ -33,6 +33,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Takeshi Yamamoto',
     source: 'Crunchyroll News',
+    sourceUrl: 'https://www.crunchyroll.com/news/latest/2024/01/14/demon-slayer-movie-breaks-box-office-records',
     publishedAt: new Date('2024-01-14'),
     category: 'anime',
     tags: ['demon slayer', 'box office', 'movie'],
@@ -50,6 +51,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Maria Rodriguez',
     source: 'Manga Plus',
+    sourceUrl: 'https://mangaplus.shueisha.co.jp/titles/100020',
     publishedAt: new Date('2024-01-13'),
     category: 'manga',
     tags: ['one piece', 'manga', 'void century']
@@ -66,6 +68,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'David Kim',
     source: 'Studio Ghibli',
+    sourceUrl: 'https://www.ghibli.jp/info/013400/',
     publishedAt: new Date('2024-01-12'),
     category: 'industry',
     tags: ['studio ghibli', 'new project', 'animation']
@@ -82,6 +85,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Elena Volkov',
     source: 'MAPPA Studios',
+    sourceUrl: 'https://jujutsukaisen.jp/news/20240111_announcement/',
     publishedAt: new Date('2024-01-11'),
     category: 'anime',
     tags: ['jujutsu kaisen', 'season 3', 'mappa']
@@ -98,6 +102,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'James Wilson',
     source: 'Weekly Shonen Jump',
+    sourceUrl: 'https://www.shonenjump.com/j/rensai/chainsaw.html',
     publishedAt: new Date('2024-01-10'),
     category: 'manga',
     tags: ['chainsaw man', 'part 2', 'sales']
@@ -114,6 +119,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Lisa Park',
     source: 'Anime Review Central',
+    sourceUrl: 'https://www.animenewsnetwork.com/review/spy-x-family-code-white/.208123',
     publishedAt: new Date('2024-01-09'),
     category: 'reviews',
     tags: ['spy x family', 'movie', 'review'],
@@ -131,6 +137,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Michael Chang',
     source: 'Shonen Jump+',
+    sourceUrl: 'https://shonenjumpplus.com/episode/3269754496401369355',
     publishedAt: new Date('2024-01-08'),
     category: 'manga',
     tags: ['my hero academia', 'final arc', 'deku']
@@ -148,6 +155,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'John Smith',
     source: 'NHK',
+    sourceUrl: 'https://www3.nhk.or.jp/news/html/20240107/k10014285571000.html',
     publishedAt: new Date('2024-01-07'),
     category: 'industry',
     tags: ['attack on titan', 'documentary', 'behind the scenes']
@@ -164,6 +172,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Emma Davis',
     source: 'Retail Weekly',
+    sourceUrl: 'https://www.animenewsnetwork.com/interest/2024-01-06/attack-on-titan-merchandise-sales-surge/.208001',
     publishedAt: new Date('2024-01-06'),
     category: 'industry',
     tags: ['attack on titan', 'merchandise', 'sales']
@@ -180,6 +189,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Yuki Tanaka',
     source: 'Art News Japan',
+    sourceUrl: 'https://www.timeout.com/tokyo/art/attack-on-titan-fan-art-exhibition-tokyo',
     publishedAt: new Date('2024-01-05'),
     category: 'other',
     tags: ['attack on titan', 'fan art', 'exhibition']
@@ -196,6 +206,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Test Author',
     source: 'Test Source',
+    sourceUrl: 'https://www.animenewsnetwork.com/',
     publishedAt: new Date('2024-01-04'),
     category: 'other',
     tags: ['test', 'generic']
@@ -208,6 +219,7 @@ const rawMockNewsData: NewsArticle[] = [
     imageUrls: [], // Empty array to test fallback
     author: 'No Image Author', 
     source: 'Image Test',
+    sourceUrl: 'https://myanimelist.net/news',
     publishedAt: new Date('2024-01-03'),
     category: 'other',
     tags: ['test', 'fallback']
@@ -225,6 +237,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Alex Rivera',
     source: 'Jikan Reviews',
+    sourceUrl: 'https://myanimelist.net/reviews.php?id=494837',
     publishedAt: new Date('2024-01-02'),
     category: 'reviews',
     tags: ['frieren', 'review', 'adventure'],
@@ -242,6 +255,7 @@ const rawMockNewsData: NewsArticle[] = [
     ],
     author: 'Studio Pierrot',
     source: 'Bleach Official',
+    sourceUrl: 'https://bleach-anime.com/news/2024/01/01/final-cour-announcement/',
     publishedAt: new Date('2024-01-01'),
     category: 'anime',
     tags: ['bleach', 'final cour', 'announcement'],
