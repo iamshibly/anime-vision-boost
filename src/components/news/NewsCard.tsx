@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { getValidImageUrl, handleImageError, excerpt } from '@/utils/imageUtils';
 import { Calendar, User, ExternalLink, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface NewsCardProps {
   article: NewsArticle;
@@ -25,7 +26,8 @@ export const NewsCard = ({ article, variant = 'default', className = '' }: NewsC
   };
 
   return (
-    <Card className={`group overflow-hidden hover:shadow-anime transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-0 ${className}`}>
+    <Link to={`/news/${article.id}`} className="block">
+      <Card className={`group overflow-hidden hover:shadow-anime transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-0 cursor-pointer ${className}`}>
       <div className={`relative ${isFeatured ? 'h-64' : isCompact ? 'h-32' : 'h-48'} overflow-hidden`}>
         <img
           src={imageUrl}
@@ -119,5 +121,6 @@ export const NewsCard = ({ article, variant = 'default', className = '' }: NewsC
         )}
       </CardContent>
     </Card>
+    </Link>
   );
 };
